@@ -28,7 +28,7 @@ function App() {
     }
    */
 
-  // A react interview question on counter
+  // A react interview question on counter L-8
   const addValue = () => {
     setCounter(prevCounter => prevCounter + 1);
     setCounter(prevCounter => prevCounter + 1);
