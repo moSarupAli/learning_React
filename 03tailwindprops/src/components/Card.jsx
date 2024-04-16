@@ -2,7 +2,7 @@ import React from 'react'
 
 // function Card({username, channel, aObj, aArr}) {
 function Card({username, btnText="visit me"}) {
-    // console.log("props ", props);
+    console.log("props ", props);
     // console.log(username, channel, aObj.name, aArr[0]);
     console.log(username);
     return (
