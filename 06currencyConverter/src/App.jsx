@@ -9,8 +9,9 @@ function App() {
   const [to, setTo] = useState("inr");
   const [convertedAmount, setconvertedAmount] = useState(0);
 
-  const currencyInfo = useCurrencyInfo(from);
+  const currencyInfo = useCurrencyInfo(from); // useCurrencyInfo returning data (with key:value pair), n we r storing it in variable
 
+  // now we r not suppose give value directly, we will give key, so we have extract key from object(from our data, provided by useCurrencyInfo), n we will holding key in a variable
   const options = Object.keys(currencyInfo);
 
   const swap = () => {
