@@ -8,9 +8,11 @@ function App() {
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("");
 
-  // useRef hook
+  // useRef hook, we have to store it in a variable
   const passwordRef = useRef(null);
 
+
+  // Generating Password
   const passwordGenerator = useCallback(() => {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -18,20 +20,24 @@ function App() {
     if (charAllowed) str += "!@#$%^&*-+=[]{}~`";
 
     for (let i = 1; i <= length; i++) {
-      let char = Math.floor(Math.random() * str.length + 1);
-      pass += str.charAt(char);
+      let charIndex = Math.floor(Math.random() * str.length + 1);
+      pass += str.charAt(charIndex);
     }
 
     setPassword(pass);
 
   }, [length, numberAllowed, charAllowed, setPassword]); // here setPassword for optimization
 
+
+  // Copying Password to Clipboard
   const copyPasswordToClipboard = useCallback(() => {
     passwordRef.current?.select();
-    passwordRef.current?.setSelectionRange(0, 100);
+    passwordRef.current?.setSelectionRange(0, 10);
     window.navigator.clipboard.writeText(password);
   }, [password]);
 
+
+  // Calling the passwordGenerator function, using useEffect, as we can not call it normally since we have used useCallback in passwordGenerator function
   useEffect(()=> {
     passwordGenerator();
   }, [length, numberAllowed, charAllowed, passwordGenerator]);
