@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 
-export function Protected({childern, authentication = true}) {
+export default function Protected({childern, authentication = true}) {
     
     const navigate = useNavigate()
     const [loader, setLoader] = useState(true)

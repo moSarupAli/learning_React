@@ -13,6 +13,7 @@ export class AuthService {
         this.account = new Account(this.client);
     }
 
+
     async createAccount({email, password, name}) {
         try {
             const userAccount = await this.account.create(ID.unique(), email, password, name);
@@ -58,6 +59,9 @@ export class AuthService {
         }
     }
 }
+
+
+// const session = await this.account.createEmailPasswordSession("sarupmondal549@gmail.com", "sarup#2024Appwrite");
 
 const authService = new AuthService();
 

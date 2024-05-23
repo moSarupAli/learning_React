@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function Container({children}) {
+export default function Container({children}) {
     
 
     /* return (

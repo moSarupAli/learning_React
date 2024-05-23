@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../Logo'
 
-export function Footer(props) {
+export default function Footer(props) {
     
 
     return (
