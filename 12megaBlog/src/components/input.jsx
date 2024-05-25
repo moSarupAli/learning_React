@@ -12,7 +12,7 @@ const Input = React.forwardRef( function Input({
             {label && 
             <label 
             className='inline-block mb-1 pl-1'
-            htmlFor='{id}'>
+            htmlFor={id}>
                 {label}
             </label>}
             <input 
@@ -25,7 +25,5 @@ const Input = React.forwardRef( function Input({
         </div>
     )
 })
-
-
 
 export default Input

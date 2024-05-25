@@ -28,9 +28,5 @@ export default function Protected({childern, authentication = true}) {
         setLoader(false)
     }, [authStatus, navigate, authentication])
 
-    return (
-        <>
-            
-        </>
-    )
+    return loader ? <h1>Loading...</h1> : <>{childern}</>
 }

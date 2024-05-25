@@ -41,7 +41,7 @@ export class AuthService {
 
     async getCurrentUser() {
         try {
-            return await this.account.get()
+            return await this.account.get();
         }
         catch(error) {
             console.log("Appwrite service :: getCurrentUser :: error", error);
@@ -59,9 +59,6 @@ export class AuthService {
         }
     }
 }
-
-
-// const session = await this.account.createEmailPasswordSession("sarupmondal549@gmail.com", "sarup#2024Appwrite");
 
 const authService = new AuthService();
 
